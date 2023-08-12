@@ -1,0 +1,33 @@
+default: &default
+  adapter: postgresql
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  timeout: 5000
+
+development:
+  # <<: *default
+  # database: tinderbot_dev
+  # adapter: postgresql
+  # encoding: unicode
+  # username: postgres
+  # password: Professional123
+  <<: *default
+  database: d62vkqlg68r7jr
+  adapter: postgresql
+  encoding: unicode
+  username: ua5e58tsd8opc9
+  password: p246640f1c12d913b359c71f7a950af55cec1b7f81224f7f84b2d95e333250efa
+  host: ec2-52-54-20-112.compute-1.amazonaws.com
+
+test:
+  <<: *default
+  database: tinderbot_test
+
+production:
+  <<: *default
+  database: d62vkqlg68r7jr
+  adapter: postgresql
+  encoding: unicode
+  username: ua5e58tsd8opc9
+  password: p246640f1c12d913b359c71f7a950af55cec1b7f81224f7f84b2d95e333250efa
+  host: ec2-52-54-20-112.compute-1.amazonaws.com
+
